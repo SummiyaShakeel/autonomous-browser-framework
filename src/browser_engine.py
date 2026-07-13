@@ -56,9 +56,9 @@ class BrowserEngine:
             self.close()
             raise
 
-    # ==========================================
+    
     # MODULE 2 & 4: NAVIGATION & INTERACTION LAYER
-    # ==========================================
+
     def navigate(self, url=None):
         """Navigates to a specific URL with error protection."""
         target_url = url if url else self.config.DEFAULT_URL
@@ -85,9 +85,9 @@ class BrowserEngine:
         self.page.screenshot(path=filepath, full_page=full_page)
         logging.info(f"Screenshot successfully saved to: {filepath}")
 
-    # ==========================================
+    
     # MODULE 3: ADVANCED DOM OPTIMIZATION LAYER
-    # ==========================================
+    
     def get_element(self, selector, frame_selector=None):
         """Locates elements reliably across standard page layers or nested iFrames."""
         # Module 3: Locator Strategy optimization & strict handling for iFrames
@@ -105,9 +105,9 @@ class BrowserEngine:
             }
         return None
 
-    # ==========================================
+    
     # MODULE 1 & 5: SHUTDOWN & CLEANUP
-    # ==========================================
+   
     def close(self):
         """Gracefully tears down all active pipelines and releases session bindings."""
         logging.info("Closing active browser engine nodes and contexts...")
