@@ -8,9 +8,9 @@ class HumanBehaviorEngine:
         """Initializes the behavior framework linked to the current active page."""
         self.page = page
 
-    # ==========================================
+    
     # TASK 1: HUMAN TYPING SIMULATION
-    # ==========================================
+    
     def human_type(self, selector, text, error_rate=0.07):
         """Simulates realistic human typing patterns with varying delay speeds,
         intentional random typos, backspaces, and natural self-corrections."""
@@ -34,9 +34,9 @@ class HumanBehaviorEngine:
 
         logging.info(f"Human-like text typed successfully into selector: {selector}")
 
-    # ==========================================
+    
     # TASK 2: HUMAN MOUSE MOVEMENT & HOVER
-    # ==========================================
+   
     def human_hover_and_click(self, selector):
         """Moves to an element naturally, hovers briefly, and clicks with dynamic timing."""
         element = self.page.locator(selector).first
@@ -48,9 +48,9 @@ class HumanBehaviorEngine:
         element.click()
         logging.info(f"Human-like hover and click action completed on: {selector}")
 
-    # ==========================================
+    
     # TASK 3 & 4: HUMAN SCROLLING & READING PAUSES
-    # ==========================================
+  
     def human_scroll_and_read(self, scrolls=3):
         """Simulates human user reading patterns, scrolling down dynamic amounts,
         pausing briefly to consume content, and occasionally back-scrolling slightly."""
@@ -69,9 +69,9 @@ class HumanBehaviorEngine:
                 self.page.evaluate(f"window.scrollBy(0, -{back_scroll});")
                 time.sleep(random.uniform(0.8, 1.5))
 
-    # ==========================================
+    
     # TASK 5: NATURAL IDLE INACTIVITY
-    # ==========================================
+ 
     def trigger_random_idle(self):
         """Generates unexpected long idle micro-delays mimicking short interruptions."""
         if random.random() < 0.15:  # 15% chance of checking phone/distraction pause
