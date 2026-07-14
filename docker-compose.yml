@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  autonomous_agent:
+    build: .
+    container_name: autonomous_agent_container
+    # Run the container in headless mode since there is no GUI screen on host servers[cite: 1]
+    environment:
+      - BROWSER_TYPE=chromium
+      - HEADLESS=true
+      - WIDTH=1280
+      - HEIGHT=720
+    # Bind output volumes to save logs, screenshots, and profiles[cite: 1]
+    volumes:
+      - ./outputs:/app/outputs
+      - ./browser_profiles:/app/browser_profiles
